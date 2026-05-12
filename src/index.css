@@ -185,6 +185,34 @@
 }
 
 /* Scrollbar */
+/* Nav button — fixes border/borderBottom conflict warning */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 100%;
+  font-family: "Golos Text", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+  border-top: 2px solid transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  color: hsl(var(--dayz-text-muted));
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+.nav-btn.active {
+  color: white;
+  background: hsl(var(--dayz-surface));
+  border-bottom-color: hsl(var(--dayz-green));
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
