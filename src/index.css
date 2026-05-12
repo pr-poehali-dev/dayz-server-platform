@@ -4,89 +4,56 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 15% 8%;
+    --foreground: 60 5% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 11%;
+    --card-foreground: 60 5% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 60 5% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 90 60% 45%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 60 5% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 90% 55%;
+    --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 60 5% 90%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 20%;
+    --input: 220 15% 16%;
+    --ring: 90 60% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* DayZ custom */
+    --dayz-green: 90 60% 42%;
+    --dayz-green-bright: 90 70% 55%;
+    --dayz-amber: 35 90% 55%;
+    --dayz-red: 0 70% 50%;
+    --dayz-bg: 220 18% 7%;
+    --dayz-surface: 220 15% 11%;
+    --dayz-surface-raised: 220 14% 14%;
+    --dayz-border: 220 15% 22%;
+    --dayz-text: 60 5% 88%;
+    --dayz-text-muted: 220 10% 52%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 60 5% 88%;
+    --sidebar-primary: 90 60% 42%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 60 5% 88%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 90 60% 42%;
   }
 }
 
@@ -97,5 +64,185 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
+    background-color: hsl(var(--dayz-bg));
+    color: hsl(var(--dayz-text));
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Navbar dropdown */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: hsl(220 20% 12%);
+  border: 1px solid hsl(var(--dayz-border));
+  border-top: 2px solid hsl(var(--dayz-green));
+  z-index: 1000;
+  padding: 4px 0;
+}
+
+.nav-item:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  font-size: 14px;
+  color: hsl(var(--dayz-text));
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: "Golos Text", sans-serif;
+}
+
+.nav-dropdown a:hover {
+  background: hsl(var(--dayz-surface-raised));
+  color: hsl(var(--dayz-green-bright));
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px hsl(var(--dayz-green) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--dayz-green) / 0.8);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.animate-delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+.animate-delay-300 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.animate-delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+.animate-delay-500 {
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.glow-green {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    hsl(220 18% 7% / 0.3) 0%,
+    hsl(220 18% 7% / 0.6) 40%,
+    hsl(220 18% 7% / 0.92) 75%,
+    hsl(220 18% 7% / 1) 100%
+  );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--dayz-bg));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--dayz-border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--dayz-green) / 0.6);
+}
+
+/* Card hover */
+.dayz-card {
+  background: hsl(var(--dayz-surface));
+  border: 1px solid hsl(var(--dayz-border));
+  transition: all 0.2s ease;
+}
+
+.dayz-card:hover {
+  border-color: hsl(var(--dayz-green) / 0.5);
+  background: hsl(var(--dayz-surface-raised));
+  transform: translateY(-2px);
+}
+
+/* Green accent line */
+.accent-line::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 100%;
+  background: hsl(var(--dayz-green));
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Badge */
+.badge-gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #1a1200;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  font-family: "Oswald", sans-serif;
+}
+
+.badge-green {
+  background: hsl(var(--dayz-green) / 0.15);
+  border: 1px solid hsl(var(--dayz-green) / 0.4);
+  color: hsl(var(--dayz-green-bright));
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  font-family: "Oswald", sans-serif;
 }
